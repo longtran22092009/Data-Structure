@@ -10,6 +10,13 @@ using namespace std;
 // Tìm đường đi giữa 2 đỉnh trong đồ thị vô hướng / có hướng (không có trọng số)
 // Sử dụng dfs / bfs kết hợp với mảng parent để truy vết đường đi từ đỉnh A đến đỉnh B
 
+/* 
+    Nếu cho q truy vấn thì sử dụng một cái map or sth 
+    để lưu lại các đỉnh thuộc thành phần liên thông thứ mấy
+    để khi kiểm tra chỉ cần kiểm tra nếu 2 đỉnh cùng thành phần liên thông không
+    nếu cùng thì có đường đi và ngược lại
+*/
+
 /*
     VD: 10 8
         1 2
