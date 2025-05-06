@@ -7,8 +7,28 @@ using namespace std;
 #define OUT "A.out"
 
 
+// Tính lũy thừa mod m (a^b % m)
+ll powMod(ll a, ll b, ll m) {
+    ll res = 1;
+    a %= m;
+
+    while (b) {
+        if (b % 2 == 1) {
+            res *= a;
+            res %= m;
+        }
+
+        a *= a;
+        a %= m;
+        b /= 2;
+    }
+    
+    return res;
+}
+
 void solve() {
-    cout << __cplusplus;
+    ll a, b; cin >> a >> b;
+    powMod(a, b, 1000000007);
 }
 
 int main() {
