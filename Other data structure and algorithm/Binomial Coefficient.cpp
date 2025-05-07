@@ -29,7 +29,7 @@ void findAllCombination() {
     }
 }
 
-// Tính tổ hợp chập k của n (0 <= k,n <= 1000)
+// Tính tổ hợp chập k của n (0 <= k,n <= 1000000)
 // Kết quả chia dư 10^9 + 7
 
 ll powMod(ll a, ll b, ll m) {
