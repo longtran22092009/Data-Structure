@@ -29,7 +29,7 @@ using namespace std;
 const ll MOD = (ll) 1e9 + 7;
 
 // Nhân hai ma trận a, b và lưu kết quả vào lại ma trận a
-void matrixMultiply(vector <vector <ll>> a, vector <vector <ll>> b) {
+void matrixMultiply(vector <vector <ll>> &a, vector <vector <ll>> &b) {
     vector <vector <ll>> res(2, vector <ll>(2));
 
     for (ll i = 0; i < 2; i++) {
@@ -50,22 +50,29 @@ void matrixMultiply(vector <vector <ll>> a, vector <vector <ll>> b) {
 }
 
 // Lũy thừa nhị phân - O(logN)
-ll binpow(ll n) {
+ll matrixBinpow(ll n) {
     // Mảng đơn vị - {{1, 0}, {0, 1}}
-    vector <vector <ll>> res(2, vector <ll>(2)) = {{1, 0}, {0, 1}};
+    vector <vector <ll>> res = {{1, 0}, {0, 1}};
 
     // Mảng khởi tạo trong công thức
-    vector <vector <ll>> v = {{1, 1}, {1, 0}};
+    vector <vector <ll>> a = {{1, 1}, {1, 0}};
 
     while (n) {
-        if (n % 2 == 0) {
-            
+        if (n % 2 == 1) {
+            matrixMultiply(res, a);
         }
+
+        matrixMultiply(a, a);
+        n /= 2;
     }
+
+    return res[0][1]; // res[1][0]
 }
 
 void solve() {
-    
+    ll n; cin >> n;
+
+    cout << matrixBinpow(n) << endl;
 }
 
 int main() {
