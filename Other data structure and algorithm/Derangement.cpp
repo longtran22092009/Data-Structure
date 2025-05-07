@@ -15,6 +15,7 @@ using namespace std;
     Công thức:
         (1) D(n) = n! * sum((-1)^k / k!) với k chạy từ 0 tới n
         (2) D(n) = n!/e + 1/2 (làm tròn xuống) với e khoảng 2.71828
+        (3) D(n) = (n-1)*(Dn-1 + Dn-2) -hay dùng--
 */
 
 
